@@ -1,5 +1,20 @@
 # TaskMaster
-A desktop app for engineers using Claude Code that centralizes the entire AI-assisted development workflow, from speccing and task creation through agent execution, PR review and code review responses, in one place.
+TaskMaster is a desktop app for engineers using Claude Code. It centralizes the entire AI-assisted development workflow — from task creation and agent execution through PR review and code review responses — in one place.
+
+---
+
+## Tech Stack
+- **Electron** — desktop app shell
+- **React + TypeScript** — UI
+- **SQLite** (via `better-sqlite3`) — local database
+- **GitHub API** (via Octokit) — PR and code review integration
+- **Jira REST API** (via `jira.js`) — task and issue integration
+
+---
+
+## Getting Started
+
+> Installation steps coming soon.
 
 ---
 
