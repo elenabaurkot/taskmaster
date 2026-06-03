@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from 'electron'
 import { join } from 'path'
+import { registerRepoHandlers } from './ipc/repo'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
@@ -23,6 +24,7 @@ function createWindow(): void {
 }
 
 app.whenReady().then(() => {
+  registerRepoHandlers()
   createWindow()
 
   // macOS: re-create window when dock icon is clicked and no windows are open

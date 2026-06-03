@@ -1,5 +1,8 @@
-import { contextBridge } from 'electron'
+import { contextBridge, ipcRenderer } from 'electron'
 
-// IPC channels will be exposed here as features are built.
-// The renderer accesses them via window.api.
-contextBridge.exposeInMainWorld('api', {})
+contextBridge.exposeInMainWorld('api', {
+  selectRepo: (): Promise<string | null> => ipcRenderer.invoke('repo:select'),
+  checkAgentsMd: (repoPath: string): Promise<boolean> => ipcRenderer.invoke('repo:check-agents-md', repoPath),
+  saveRepo: (repoPath: string): Promise<void> => ipcRenderer.invoke('repo:save', repoPath),
+  loadAllRepos: (): Promise<string[]> => ipcRenderer.invoke('repo:load-all')
+})

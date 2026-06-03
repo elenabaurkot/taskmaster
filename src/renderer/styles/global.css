@@ -1,0 +1,179 @@
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f9fafb;
+  --border: #d1d5db;
+  --border-hover: #b8bcc4;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --btn-bg: #f3f4f6;
+  --btn-bg-hover: #e5e7eb;
+  --btn-text: #374151;
+}
+
+:root.dark {
+  --bg: #111111;
+  --surface: #1c1c1c;
+  --surface-hover: #242424;
+  --border: #2e2e2e;
+  --border-hover: #3d3d3d;
+  --text-primary: #f0f0f0;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --btn-bg: #242424;
+  --btn-bg-hover: #2e2e2e;
+  --btn-text: #d1d5db;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+/* ── Repo setup screen ─────────────────────────────── */
+
+.repo-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+}
+
+.repo-setup__title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+}
+
+.repo-setup__empty {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.repo-setup__list {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.repo-item {
+  width: 100%;
+  text-align: left;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.repo-item:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+}
+
+.repo-item__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.repo-item__path {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* ── Buttons ───────────────────────────────────────── */
+
+.btn {
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  transition: background 0.1s;
+}
+
+.btn:hover {
+  background: var(--btn-bg-hover);
+}
+
+/* ── Theme toggle ──────────────────────────────────── */
+
+.theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--btn-bg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.theme-toggle:hover {
+  background: var(--btn-bg-hover);
+  border-color: var(--border-hover);
+}
+
+/* ── Placeholder pages ─────────────────────────────── */
+
+.page {
+  padding: 32px;
+}
+
+.page__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.page__subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.page__placeholder {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
