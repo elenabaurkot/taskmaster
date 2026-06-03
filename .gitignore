@@ -1,0 +1,13 @@
+# Personal Claude Code config
+.claude/
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+
+# Environment
+.env
+.env.local
